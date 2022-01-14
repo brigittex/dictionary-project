@@ -1,22 +1,34 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results.js";
+import Images from "./Images.js";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
+  let [images, setImages] = useState([]);
   let [loaded, setLoaded] = useState(false);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data[0]);
+  }
+
+  function handleImageResponse(response) {
+    //console.log(response);
+    setImages(response.data.photos);
   }
 
   function search() {
     //API documentation: https://dictionaryapi.dev/
-    let apiEndpoint = "https://api.dictionaryapi.dev/api/v2/entries/en/";
-    let apiUrl = `${apiEndpoint}${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+    let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
+
+    let imageApiKey =
+      "563492ad6f91700001000001904c8b42025744df854946f387d8fda8";
+    let imageApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=12`;
+    let headers = { Authorization: `Bearer ${imageApiKey}` };
+    axios.get(imageApiUrl, { headers: headers }).then(handleImageResponse);
   }
 
   function handleSubmit(event) {
@@ -64,6 +76,7 @@ export default function Dictionary(props) {
           </form>
         </section>
         <Results results={results} />
+        <Images images={images} />
       </div>
     );
   } else {
