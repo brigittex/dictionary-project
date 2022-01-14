@@ -1,4 +1,5 @@
 import React from "react";
+import "./Meaning.css";
 import Example from "./Example.js";
 import Synonyms from "./Synonyms.js";
 

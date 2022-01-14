@@ -1,4 +1,5 @@
 import React from "react";
+import "./Example.css";
 
 export default function Example(props) {
   //console.log(props.example);
@@ -6,7 +7,7 @@ export default function Example(props) {
     return (
       <div className="Example">
         <b>Example: </b>
-        <em> {props.example}</em>
+        {props.example}
       </div>
     );
   } else {

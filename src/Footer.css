@@ -1,11 +1,4 @@
-h1 {
-  text-align: center;
-  text-decoration: underline;
-  font-size: 30px;
-  margin: 30px auto;
-}
-
-footer {
+.Footer {
   text-align: center;
   font-size: 13px;
   color: rgb(152, 152, 152);
