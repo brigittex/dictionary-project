@@ -49,12 +49,12 @@ export default function Dictionary(props) {
   if (loaded) {
     return (
       <div className="Dictionary">
-        <h1 className="App-header">📚 Dictionary 📚</h1>
+        <h1 className="App-header">Dictionary</h1>
         <section>
           <h2 className="App-header">What would you like to look up?</h2>
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-10">
+              <div className="col-11">
                 <input
                   type="text"
                   className="form-control"
@@ -66,13 +66,16 @@ export default function Dictionary(props) {
                 />
               </div>
 
-              <div className="col-2">
-                <button type="submit" className="btn btn-primary float-end">
-                  <i className="fas fa-search"></i> Search
+              <div className="col-1">
+                <button
+                  type="submit"
+                  className="btn  w-100 float-end search-button"
+                >
+                  <i className="fas fa-search"></i>
                 </button>
               </div>
             </div>
-            <div className="hint">suggested words: beach, orange, summer</div>
+            <div className="hint">Suggested words: beach, puzzle, street</div>
           </form>
         </section>
         <Results results={results} />
