@@ -3,8 +3,7 @@ import Meaning from "./Meaning.js";
 
 export default function Results(props) {
   if (props.results) {
-    console.log(props.results);
-    console.log(props.results.meanings[0].definitions[0].definition);
+    //console.log(props.results);
     return (
       <div className="Results">
         <hr />
