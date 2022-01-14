@@ -4,14 +4,14 @@
 
 .Phonetic a {
   border: 1px solid rgb(221, 221, 221);
-  border-radius: 30px;
+  border-radius: 100px;
 
   padding: 10px 20px;
   margin-right: 10px;
 
   text-decoration: none;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 25px;
   transition: 120ms ease-in-out;
   color: blue;
 }
