@@ -1,8 +1,15 @@
+header {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 30px;
+  margin: 30px auto;
+}
+
 footer {
   text-align: center;
   font-size: 13px;
   color: rgb(152, 152, 152);
   display: block;
-  margin: 10 auto;
+  margin: 20px auto;
   font-family: "Roboto Mono", monospace;
 }
